@@ -51,10 +51,10 @@ class HomeFragment : Fragment() {
       viewModel.currentImageUri.observe(viewLifecycleOwner) {
          if (it != null) {
             selectedImageUri = it
-            binding.previewImage.setImageURI(selectedImageUri)
+            binding.previewImageView.setImageURI(selectedImageUri)
          }
       }
-      binding.button1.setOnClickListener {
+      binding.analyzeButton.setOnClickListener {
          selectedImageUri?.let { imageUri ->
             Log.d(TAG, imageUri.toString())
             Log.d(TAG, "Analyzing")
@@ -67,7 +67,7 @@ class HomeFragment : Fragment() {
             ).show()
          }
       }
-      binding.button2.setOnClickListener {
+      binding.galleryButton.setOnClickListener {
          openGallery()
       }
    }
@@ -108,7 +108,7 @@ class HomeFragment : Fragment() {
          if (selectedImageUri != null) {
             viewModel.setImageUri(selectedImageUri)
             viewModel.currentImageUri.observe(viewLifecycleOwner) { uri ->
-               binding.previewImage.setImageURI(uri)
+               binding.previewImageView.setImageURI(uri)
             }
          }
       }

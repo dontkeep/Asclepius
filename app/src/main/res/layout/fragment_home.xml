@@ -6,38 +6,48 @@
   xmlns:app="http://schemas.android.com/apk/res-auto"
   tools:context=".ui.fragments.HomeFragment">
 
+  <com.google.android.material.progressindicator.LinearProgressIndicator
+    android:id="@+id/progressIndicator"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:indeterminate="true"
+    android:visibility="gone"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
   <ImageView
-    android:id="@+id/previewImage"
+    android:id="@+id/previewImageView"
     android:layout_width="0dp"
     android:layout_height="0dp"
     android:layout_marginBottom="8dp"
     android:contentDescription="@string/image_preview"
     android:src="@drawable/placeholder"
-    app:layout_constraintBottom_toTopOf="@id/button1"
+    app:layout_constraintBottom_toTopOf="@id/analyzeButton"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     />
     <Button
       style="?attr/materialIconButtonFilledTonalStyle"
-      android:id="@+id/button1"
+      android:id="@+id/analyzeButton"
       android:layout_width="150dp"
       android:layout_height="wrap_content"
       android:text="@string/analyze"
       android:layout_marginBottom="8dp"
       app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toStartOf="@id/button2"
+      app:layout_constraintEnd_toStartOf="@id/galleryButton"
       app:layout_constraintStart_toStartOf="parent"
       />
     <Button
       style="?attr/materialIconButtonFilledTonalStyle"
-      android:id="@+id/button2"
+      android:id="@+id/galleryButton"
       android:layout_width="150dp"
       android:layout_height="wrap_content"
       android:text="@string/gallery"
       android:layout_marginBottom="8dp"
       app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintStart_toEndOf="@id/button1"
+      app:layout_constraintStart_toEndOf="@id/analyzeButton"
       app:layout_constraintEnd_toEndOf="parent"
       />
 
